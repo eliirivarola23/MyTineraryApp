@@ -45,7 +45,7 @@ const Itinerary = (props) => {
         let res = await props.fetchearActividades(itinerario._id);
         setActividades(res[0].actividades);
       } catch (e) {
-        console.log(e)
+        Alert.alert("There was a problem, try later");
       }
     };
     fetchearActividades();
