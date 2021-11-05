@@ -1,0 +1,13 @@
+const express = require("express") 
+const cors = require("cors") 
+const passport = require("passport")
+require('dotenv').config()
+const router = require('./routes/index')
+require("./config/database.js")
+require("./config/passport")
+const app = express() 
+app.use(cors())
+app.use(express.json())
+app.use('/api', router)
+app.listen(4000, () => console.log("Servidor en línea")) 
+
